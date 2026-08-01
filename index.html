@@ -21,13 +21,31 @@
 
         function getHumanChoice(){
             let user = prompt("Type one of these: rock, paper, or siccors");
-            return user;
+            return user.toLowerCase();
         }
 
-        let comp_hand = getComputerChoice();
-        console.log(comp_hand);
-        let human_hand = getHumanChoice();
-        console.log(human_hand);
+        function playRound(human_hand, comp_hand){
+            if (human_hand === "rock" && comp_hand === "siccors"){
+                humanScore += 1;
+                console.log("You win! Rock beats Siccors.");
+            } else if (human_hand === "paper" && comp_hand === "rock") {
+                humanScore += 1;
+                console.log("You win! Papper beats Rock.");
+            } else if (human_hand === "siccors" && comp_hand === "paper") {
+                humanScore += 1;
+                console.log("You win! Siccors beats Paper.");
+            } else if (human_hand === comp_hand) {
+                console.log(`It's a tie. ${human_hand} and ${comp_hand}. Try again.`)
+            } else {
+                computerScore += 1;
+                console.log(`You lost! ${comp_hand} beats ${human_hand}.`);
+            }
+        }
+
+        for (let index = 0; index < 5; index++) {
+            let play = playRound(getHumanChoice(), getComputerChoice());  
+        }
+        console.log(`human: ${humanScore}, computer: ${computerScore}`);
     </script>
 </body>
 </html>
