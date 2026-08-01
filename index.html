@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+</head>
+<body>
+    <div>hello..</div>
+    <script> 
+        console.log("hello world.");
+
+        let humanScore = 0;
+        let computerScore = 0;
+        
+        const hands = ["rock", "paper", "siccors"];
+        function getComputerChoice(){
+            let ran_num = Math.floor(Math.random()*3);
+            return hands[ran_num];
+        }
+
+        function getHumanChoice(){
+            let user = prompt("Type one of these: rock, paper, or siccors");
+            return user;
+        }
+
+        let comp_hand = getComputerChoice();
+        console.log(comp_hand);
+        let human_hand = getHumanChoice();
+        console.log(human_hand);
+    </script>
+</body>
+</html>
